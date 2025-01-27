@@ -8,5 +8,42 @@ package student;
  */
 public class Greeting {
 
+    private int localityID;
+    private String localityName;
+    private String asciiGreeting;
+    private String unicodeGreeting;
+    private String formatstr;
 
+    public Greeting(int localityID,
+                    String localityName){
+        this(localityID,localityName,"Hello");
+    }
+
+
+    public Greeting(int localityID,
+                    String localityName,
+                    String greeting) {
+        this(localityID, localityName, greeting, greeting, "%s, %%s!");
+    }
+
+    public Greeting(int localityID,
+                    String localityName,
+                    String asciiGreeting,
+                    String unicodeGreeting,
+                    String formatStr) {
+        this.localityID = localityID;
+        this.localityName = localityName;
+        this.asciiGreeting = asciiGreeting;
+        this.unicodeGreeting = unicodeGreeting;
+        this.formatstr = formatStr;
+
+    }
+
+    public int getLocalityID() {
+        return this.localityID;
+    }
+
+    public static void main(String[] args) {
+
+    }
 }
