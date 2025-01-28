@@ -16,30 +16,38 @@ Write a short paragraph detailing the flow of the program in your own words. Thi
 ## Assignment Questions
 
 1. List three additional java syntax items you didn't know when reading the code.  (make sure to use * for the list items, see example below, the backtick marks are used to write code inline with markdown)
-   
-   * (example) `final class`
+
+   * `String.format()`
+   * `package student; `
+   * `@Override`
 
 2. For each syntax additional item listed above, explain what it does in your own words and then link a resource where you figured out what it does in the references section. 
 
-    * (example) The `final` keyword when used on a class prevents the class from being subclassed. This means that the class cannot be extended by another class. This is useful when you want to prevent a class from being modified or extended[^1] . It is often the standard to do this when a class only contains static methods such as driver or utility classes. Math in Java is an example of a final class[^2] .
+    * `String.format()` – This method is used to create formatted strings in Java, similar to `printf()` in C. It allows you to insert values dynamically into a string template. Super useful for cleaner, more readable code. 
+    * `package student;` – This line declares that the class belongs to the `student` package. Packages are like folders in Java. They help organize code and avoid naming conflicts. 
+    * `@Override` – This annotation tells the compiler that a method is overriding a method from its superclass. If there's a typo or mismatch, the compiler will catch it.
+    * I learn all of them by [Oracle Java Docs](https://docs.oracle.com).
 
 3. What does `main` do in Java? 
 
-    Go ahead and answer the question as a short paragraph / few sentences. Notice the indent, this is valid because it is a list item. (erase this line before writing.)
+   The `main` method is the entry point of any Java application. When you run a Java program, the JVM looks for `public static void main(String[] args)` and starts execution from there. Without a `main` method, a Java application won't run.
 
 
 4. What does `toString()` do in Java? Why should any object class you create have a `toString()` method?
 
-    Same as above - short answer
+   `toString()` is a method that provides a human-readable representation of an object. By default, it returns a memory address, but overriding it makes debugging way easier since you can print the information about an object.
+
 
 5. What is javadoc style commenting? What is it used for? 
 
-    Same as above - short answer
+   Javadoc comments (`/** ... */`) are special multi-line comments used to generate documentation for Java classes and methods. They help the code writer and others who want to read the code easily and quickly to understand what a method or class does without digging into the code.
+
 
 
 6. Describe Test Driving Development (TDD) in your own words. 
 
-    Same as above - short answer    
+   TDD is like writing the exam before studying for it. You write test cases first, then write the actual code to pass those tests. This forces you to think about what your code should do and what exactly your goal is before you write it. It really helps you to have fewer bugs and better design.
+
 
 7. Go to the [Markdown Playground](MarkdownPlayground.md) and add at least 3 different markdown elements you learned about by reading the markdown resources listed in the document. Additionally you need to add a mermaid class diagram (of your choice does not have to follow the assignment. However, if you did use mermaid for the assignment, you can just copy that there). Add the elements into the markdown file, so that the formatting changes are reserved to that file. 
 
