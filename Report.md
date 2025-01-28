@@ -4,14 +4,63 @@ The following report contains questions you need to answer as part of your submi
 
 
 ## Design Doc
-Please link your UML design file here. See resources in the assignment on how to
-link an image in markdown. You may also use [mermaid] class diagrams if you prefer, if so, include the mermaid code here.  You DO NOT have to include Greeting.java as part of the diagram, just the AlohaWorld application that includes: [AlohaWorld.java], [Greeter.java], and [ConsoleView.java].
+
+Below is the UML diagram for the AlohaWorld application, which includes the `AlohaWorld`, `Greeter`, and `ConsoleView` classes.
+
+```mermaid
+---
+title: Aloha World UML
+---
+classDiagram
+    direction LR
+    AlohaWorld --> Greeter : has-a
+    AlohaWorld --> ConsoleView : uses
+    ConsoleView --> Greeter : uses
+
+    class AlohaWorld {
+        -AlohaWorld() // Private constructor
+        +main(args: String[]): void
+    }
+
+    class Greeter {
+        -String name
+        -int locality
+        -static List~String~ localityList
+        -static final int HAWAII
+        -static final int CHINA
+        -static final int ITALY
+        -static final int DEFAULT_LOCALITY
+
+        +Greeter(name: String)
+        +Greeter(name: String, locality: int)
+        +getName(): String
+        +getLocality(): int
+        +setLocality(locality: int): void
+        +greet(): String
+        +greet(asciiOnly: boolean): String
+        -getLocalityString(): String
+        +hashCode(): int
+        +equals(obj: Object): boolean
+        +toString(): String
+        +static getLocalityList(): List~String~
+    }
+
+    class ConsoleView {
+        -static final Scanner SCANNER
+        -static final List~String~ LOCALITY_OPTIONS
+        
+        -ConsoleView() // Private constructor
+        +static getName(): String
+        +static getLocality(): int
+        +static checkRunAgain(): boolean
+        +static printGreeting(greeting: String): void
+    }
+```
 
 
 
 ### Program Flow
-Write a short paragraph detailing the flow of the program in your own words. This is to help you understand / trace the code (and give you practice of something called a code walk that will be required in this course).
-
+The **AlohaWorld** program begins execution in the `main` method of the `AlohaWorld` class. First, it prompts the user for their name and locality using the `ConsoleView` class. Then, an instance of `Greeter` is created with the provided name and locality. The program generates a greeting based on the locality and displays it using `ConsoleView.printGreeting()`. After displaying the greeting, the program asks if the user wants to be greeted again. If the user chooses to continue, they are prompted to select a new locality, which updates the `Greeter` instance before generating and displaying a new greeting. This loop continues until the user opts out. The `Greeter` class manages the greeting logic, while `ConsoleView` handles user input and output, ensuring a clear separation of concerns.
 
 ## Assignment Questions
 

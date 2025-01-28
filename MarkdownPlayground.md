@@ -21,3 +21,20 @@ Mermaid is a markdown language that allows you to create diagrams. You can find 
 
 <!-- start your playground code under this dashed line -->
 ----
+## 1. Using Links
+Markdown allows the creation of hyperlinks using the `[text](URL)` syntax.  
+For example, you can visit the [Markdown Guide](https://www.markdownguide.org/basic-syntax/) for a complete list of Markdown syntax.
+
+## 2. Adding Comments
+Markdown itself does not support native comments, but in environments that support HTML, you can use:
+<!-- This is a Markdown comment, it will not be visible in the rendered output -->
+
+## 3. Code Blocks
+Markdown provides multiple ways to display code, including inline and multi-line code blocks:
+- **Inline Code**: Use backticks, e.g., `print("Hello, World!")`
+- **Multi-line Code Block**:
+```python
+def hello():
+    print("Hello, World!")
+
+hello()
