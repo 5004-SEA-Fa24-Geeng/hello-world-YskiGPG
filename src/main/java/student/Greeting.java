@@ -92,7 +92,7 @@ public class Greeting {
      * @return the greeting format string
      */
     public String getFormatStr() {
-        return this.formatStr.replace("%%s", this.asciiGreeting);
+        return String.format(this.formatStr, this.unicodeGreeting);
     }
 
     /**
@@ -102,7 +102,7 @@ public class Greeting {
      * @return the formatted greeting string
      */
     public String getFormatStr(boolean asciiOnly) {
-        return this.formatStr.replace("%%s", asciiOnly ? this.asciiGreeting : this.unicodeGreeting);
+        return String.format(this.formatStr, asciiOnly ? this.asciiGreeting : this.unicodeGreeting);
     }
 
     /**
