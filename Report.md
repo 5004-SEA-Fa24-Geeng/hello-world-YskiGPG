@@ -59,10 +59,12 @@ These questions require deeper thinking of the topic. We don't expect 100% corre
 
 1. Why would we want to keep interaction with the client contained to ConsoleView?
 
+* One benefit is to capsule things together to improve the code reusability. So `ConsoleView` only cares about inputs and outputs, while other classes focus on other goals and logic. This makes it easier to modify how we interact with users. Also, it helps keep our code clean and maintainable.
 
 2. Right now, the application isn't very dynamic in that it can be difficult to add new languages and greetings without modifying the code every time. Just thinking programmatically,  how could you make the application more dynamic? You are free to reference Geeting.java and how that could be used in your design.
 
-
+* A better approach is to use a data-driven design, where greetings are stored externally, like in a JSON file or a database, instead of being hardcoded in Java.
+Then, Greeting.java could load this data dynamically, so adding a new greeting wouldn't require any changes to the Java code.
 
 > [!IMPORTANT]
 >  After you upload the files to your github (ideally you have been committing throughout this progress / after you answer every question) - make sure to look at your completed assignment on github/in the browser! You can make sure images are showing up/formatting is correct, etc. The TAs will actually look at your assignment on github, so it is important that it is formatted correctly.
@@ -73,6 +75,8 @@ These questions require deeper thinking of the topic. We don't expect 100% corre
 [^1]: Final keyword in Java: 2024. https://www.geeksforgeeks.org/final-keyword-in-java/. Accessed: 2024-03-30. 
 
 [^2]: Math (Java Platform SE 17). https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Math.html. Accessed: 2024-03-30.
+
+[^3]: Data-Driven Design - Martin Fowler. https://martinfowler.com/articles/data-oriented-design.html. Accessed: 2024-03-30.
 
 
 <!-- This is a comment, below this link the links in the document are placed here to make ti easier to read. This is an optional style for markdown, and often as a student you will include the links inline. for example [mermaid](https://mermaid.js.org/intro/syntax-reference.html) -->
