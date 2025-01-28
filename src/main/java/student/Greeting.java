@@ -1,15 +1,23 @@
 package student;
 
 /**
- * The Greeting class stores the locality ID, locality name, and the corresponding
- * ASCII and Unicode greetings. This helps simplify looking up greetings and makes
- * it easier to add new greeting types without modifying other parts of the code.
+ * The Greeting class represents a greeting message for a specific locality.
+ * It includes both ASCII and Unicode greeting formats.
  */
 public class Greeting {
+    /** ID of the locality. */
     private int localityID;
+
+    /** Name of the locality. */
     private String localityName;
+
+    /** ASCII greeting message. */
     private String asciiGreeting;
+
+    /** Unicode greeting message. */
     private String unicodeGreeting;
+
+    /** Format string for the greeting. */
     private String formatStr;
 
     /**
@@ -42,7 +50,8 @@ public class Greeting {
      * @param unicodeGreeting Greeting using Unicode characters
      * @param formatStr       Format string for the greeting
      */
-    public Greeting(int localityID, String localityName, String asciiGreeting, String unicodeGreeting, String formatStr) {
+    public Greeting(int localityID, String localityName, String asciiGreeting,
+                    String unicodeGreeting, String formatStr) {
         this.localityID = localityID;
         this.localityName = localityName;
         this.asciiGreeting = asciiGreeting;
@@ -50,65 +59,45 @@ public class Greeting {
         this.formatStr = formatStr;
     }
 
-    /**
-     * Returns the locality ID.
-     *
-     * @return the locality ID number
-     */
+    /** @return the locality ID */
     public int getLocalityID() {
-        return this.localityID;
+        return localityID;
     }
 
-    /**
-     * Returns the locality name.
-     *
-     * @return the locality name
-     */
+    /** @return the locality name */
     public String getLocalityName() {
-        return this.localityName;
+        return localityName;
     }
 
-    /**
-     * Returns the ASCII greeting.
-     *
-     * @return the ASCII greeting
-     */
+    /** @return the ASCII greeting */
     public String getAsciiGreeting() {
-        return this.asciiGreeting;
+        return asciiGreeting;
     }
 
-    /**
-     * Returns the Unicode greeting.
-     *
-     * @return the Unicode greeting
-     */
+    /** @return the Unicode greeting */
     public String getUnicodeGreeting() {
-        return this.unicodeGreeting;
+        return unicodeGreeting;
     }
 
-    /**
-     * Returns the format string for the greeting.
-     *
-     * @return the greeting format string
-     */
+    /** @return the greeting format string */
     public String getFormatStr() {
-        return String.format(this.formatStr, this.unicodeGreeting);
+        return String.format(formatStr, unicodeGreeting);
     }
 
     /**
-     * Returns the format string with the appropriate greeting (ASCII or Unicode).
+     * Returns the formatted greeting string based on ASCII or Unicode preference.
      *
-     * @param asciiOnly if true, returns the ASCII greeting format; otherwise, Unicode
-     * @return the formatted greeting string
+     * @param asciiOnly If true, returns ASCII format; otherwise, Unicode
+     * @return The formatted greeting string
      */
     public String getFormatStr(boolean asciiOnly) {
-        return String.format(this.formatStr, asciiOnly ? this.asciiGreeting : this.unicodeGreeting);
+        return String.format(formatStr, asciiOnly ? asciiGreeting : unicodeGreeting);
     }
 
     /**
-     * Returns a string representation of the Greeting object.
+     * Converts the object to a string representation.
      *
-     * @return a formatted string with locality details and greetings
+     * @return The formatted string of the object
      */
     @Override
     public String toString() {
